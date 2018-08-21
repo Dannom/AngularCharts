@@ -1,0 +1,33 @@
+<b style="display:block">
+  Insert the Chart details
+</b>
+<br>
+<label for="chartName">Chart Name</label>
+<input type="text" class="form-control col-5 chartName" [value]="chartName" (input)="onChartName()">
+<br>
+<div class="container">
+  <div class="row">
+
+    <div class="form-group col-5">
+      <label for="xAxis">X data:</label>
+    </div>
+
+    <div class="form-group col-3 offset-1">
+      <label for="yAxis">Y data:</label>
+    </div>
+
+    <button class="btn btn-primary col-1 align-self-start" (click)="onAdd()">Add</button>
+    <button class="btn btn-primary col-1 align-self-start" (click)="onDel()">Del</button>
+
+  </div>
+
+  <div class="row" *ngFor="let field of fields; let i = index">
+      <input type="string" class="form-control col-5 xAxis" [value]="xValues[i]">
+      <input type="number" class="form-control col-5 offset-1 yAxis" [value]="yValues[i]">
+  </div>
+
+  <div class="row">
+    <button class="btn btn-primary" (click)="onDone()">Done</button>
+  </div>
+
+</div>
